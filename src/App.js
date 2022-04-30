@@ -1,23 +1,56 @@
 import logo from './logo.svg';
 import './App.css';
+import * as requester from './sendRequests'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <body>
+      <div className="ZADUDOSER" >
+        <button className={"button"} id={"axios-button"} onClick={requester.sendAxios}>
+            Axios
+        </button>
+        <button className={"button"} id={"superagent-button"} onClick={requester.sendSuperagent}>
+            Superagent
+        </button>
+        <button className={"button"} id={"fetch-button"} onClick={requester.sendFetch}>
+            Fetch
+        </button>
+      </div>
+      <div className="RESUlTS">
+          <div>
+              Axios Result:
+              <text id={"axios-res"}>
+
+              </text>
+          </div>
+          <div>
+              Superagent Result:
+              <text id={"superagent-res"}>
+
+              </text>
+          </div>
+          <div>
+              Request Result:
+              <text id={"request-res"}>
+
+              </text>
+          </div>
+          <div>
+              Fetch Result:
+              <text id={"fetch-res"}>
+
+              </text>
+          </div>
+          <div>
+              Supertest Result:
+              <text id={"supertest-res"}>
+
+              </text>
+          </div>
+
+      </div>
+      </body>
     </div>
   );
 }
